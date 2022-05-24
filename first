@@ -1,0 +1,25 @@
+ actLineNumber_cur = 0;
+var actLineNumber_prev = 0;
+var progName_cur = "";
+var progName_prev = "";
+var lastMCode_cur = 0;
+var lastMCode_prev = 0;
+var ncProgEndCounter_cur = 0;
+var ncProgEndCounter_prev = 0;
+var machineStatus = "idle";
+var endOfProgram = false;
+var ProjectID = ""; 
+var DeviceType = "";
+var ApplicationType = "";
+var ClientID = "";
+function getValueFromSet(state, set, name) {
+ for (var i = 0;i < set.Set.Data.length;i++) {
+ var v = set.Set.Data[i];
+ var v = set.Set.Data[i];
+ if (v.Name == name) {
+ return v.Value;
+ }
+ }
+ 
+ throw name + " not found in data";
+}
